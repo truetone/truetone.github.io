@@ -9,71 +9,75 @@ wordpress_id: 395
 categories:
 - JavaScript
 - JQuery
-- web development
+- web-development
 tags:
 - html forms jquery
 ---
 
-This is a simple method of showing and hiding form elements based on the user's selection. [It's based on this article](http://minneapolis.craigslist.org/ram/tag/1642880912.html) with a couple of very minor changes. (Dare I say, improvements?) I'm going to assume you've already included the JQuery library so I won't cover that here. I want to go straight to the code. ([View the example page here](http://anthonygthomas.com/examples/jquery-display-forms.html).)<!-- more -->
+This is a simple method of showing and hiding form elements based on the user's selection. [It's based on this article](http://minneapolis.craigslist.org/ram/tag/1642880912.html) with a couple of very minor changes. (Dare I say, improvements?) I'm going to assume you've already included the JQuery library so I won't cover that here. I want to go straight to the code. ([View the example page here](http://anthonygthomas.com/examples/jquery-display-forms.html).)
 
 First, the form:
-
-`<form id="ExampleForm" method="post" action="#">
-	<fieldset>
-		<legend>Questionnaire</legend>
-		<div class="input select">
-			<label for="select1">Choose 1 to make the next select list appear.</label>
-			<select name="select1" id="select1">
-				<option value="">(choose one)</option>
-				<option value="0">0</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-			</select>
-		</div>
-		<div class="hide" id="hide1"><!-- this select box will be hidden at first -->
+{% highlight html linenos %}
+	<form id="ExampleForm" method="post" action="#">
+		<fieldset>
+			<legend>Questionnaire</legend>
 			<div class="input select">
-				<label for="select2">Select "Yes" to make the next option appear.</label>
-				<select name="select2" id="select2">
-					<option value="">(choose one)</option>
-					<option value="1">Yes</option>
-					<option value="0">No</option>
-					<option value="3">Don&#039;t Know</option>
-				</select>
-			</div>
-		</div>
-		<div class="hide" id="hide2"> <!-- this one will also be hidden at first. -->
-			<div class="input select">
-				<label for="select3">This is the last question.</label>
-				<select name="select3" id="select3">
+				<label for="select1">Choose 1 to make the next select list appear.</label>
+				<select name="select1" id="select1">
 					<option value="">(choose one)</option>
 					<option value="0">0</option>
 					<option value="1">1</option>
-					<option value="2">2 to 5</option>
-					<option value="3">6 to 10</option>
-					<option value="4">&gt;10</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
 				</select>
 			</div>
+			<div class="hide" id="hide1"><!-- this select box will be hidden at first -->
+				<div class="input select">
+					<label for="select2">Select "Yes" to make the next option appear.</label>
+					<select name="select2" id="select2">
+						<option value="">(choose one)</option>
+						<option value="1">Yes</option>
+						<option value="0">No</option>
+						<option value="3">Don&#039;t Know</option>
+					</select>
+				</div>
+			</div>
+			<div class="hide" id="hide2"> <!-- this one will also be hidden at first. -->
+				<div class="input select">
+					<label for="select3">This is the last question.</label>
+					<select name="select3" id="select3">
+						<option value="">(choose one)</option>
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2 to 5</option>
+						<option value="3">6 to 10</option>
+						<option value="4">&gt;10</option>
+					</select>
+				</div>
+			</div>
+		</fieldset>
+		<div class="submit">
+			<input type="submit" value="Save Answers" />
 		</div>
-	</fieldset>
-	<div class="submit">
-		<input type="submit" value="Save Answers" />
-	</div>
-</form>`
+	</form>
+{% endhighlight %}
 
 Now make sure your "hide" css class is hidden:
 
-`.hide {
+{% highlight css linenos %}
+.hide {
 	display:none;
-}`
+}
+{% endhighlight %}
 
 Now with the wonderful elegance of JQuery, we'll tell the browser to display the hidden divs based on the user's selection:
 
-`$(document).ready(function(){
+{% highlight javascript linenos %}
+$(document).ready(function(){
 	$("#select1").change(function(){
 
 		if ($(this).val() == "1" ) {
@@ -99,13 +103,15 @@ Now with the wonderful elegance of JQuery, we'll tell the browser to display the
 
 		}
 	});
-});`
+});
+{% endhighlight %}
 
 Let's look at what's happening here. First, we have a form with select boxes with ids "select1", "select2" and "select3". The last two are hidden by enclosing them in a div with our "hide" class. (Incidentally, Blueprint provides a "hide" class for you if you use that framework.)
 
 Next we tell JQuery that as soon as "select1" is changed, we need to evaluate the new value. In this case, if the new value is "1", we want to display the div with the id "hide1" [using JQuery's slideDown effect](http://api.jquery.com/slideDown/). We do this with [JQuery's change event](http://api.jquery.com/change/).
 
-`$("#select1").change(function(){ // when #select1 changes
+{% highlight javascript linenos %}
+$("#select1").change(function(){ // when #select1 changes
 
 		if ($(this).val() == "1" ) { // see if the new value is "1"
 
@@ -116,11 +122,13 @@ Next we tell JQuery that as soon as "select1" is changed, we need to evaluate th
 			$(".hide1").slideUp("fast");	//otherwise, hide it with the slideUp effect
 
 		}
-	});`
+	});
+{% endhighlight %}
 
 Once "select2" is displayed, we can evaluate it to see if we need to display "select3" which is in a div with a "hide" class and "hide2" id.
 
-`$("#select2").change(function(){ // once select2 is changed
+{% highlight javascript linenos %}
+$("#select2").change(function(){ // once select2 is changed
 
 		if ($(this).val() == "1" ) { // see if the new value is "1"
 
@@ -131,7 +139,8 @@ Once "select2" is displayed, we can evaluate it to see if we need to display "se
 			$(".hide2").slideUp("fast");	// otherwise hide it using slideUp
 
 		}
-	});`
+	});
+{% endhighlight %}
 
 Remarkably simple really. [Review the working example and code here](http://anthonygthomas.com/examples/jquery-display-forms.html).
 

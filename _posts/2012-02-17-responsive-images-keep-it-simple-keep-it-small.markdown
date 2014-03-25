@@ -2,20 +2,20 @@
 author: admin
 comments: true
 date: 2012-02-17 01:58:03+00:00
-layout: posts
+layout: post
 slug: responsive-images-keep-it-simple-keep-it-small
 title: 'Responsive Images: Keep It Simple; Keep It Small'
 wordpress_id: 630
 categories:
 - JavaScript
-- responsive design
-- responsive images
-- web development
+- responsive-design
+- responsive-images
+- web-development
 ---
 
 There's a lot of excitement about responsive design in the mobile web development world. One of the techniques used in responsive design is responsive or adaptive images. There are a handful of techniques out there including CSS fluid images, using [overflow:hidden to crop images](http://demo.solemone.de/overflow-image-with-vertical-centering-for-responsive-web-design/) and using [a combination of .htaccess settings and PHP to deliver device-specific images](http://adaptive-images.com/).
 
-The first two solutions are fairly simple, but ignore one problem: serving a larger-than-necessary image over a potentially slow network to a user who may have limitations on the amount of data they can receive. Keeping website size down is also important now because [Google is using site speed as a criterion for search rankings](http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html). So, while I find the first two solutions interesting, I don't think they're the best we can do.<!-- more -->
+The first two solutions are fairly simple, but ignore one problem: serving a larger-than-necessary image over a potentially slow network to a user who may have limitations on the amount of data they can receive. Keeping website size down is also important now because [Google is using site speed as a criterion for search rankings](http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html). So, while I find the first two solutions interesting, I don't think they're the best we can do.
 
 The adaptive image technique of routing image requests with a cookie and some Apache settings in an .htaccess file is also interesting. It too has limitations. First, it's not for the faint of heart. If you don't know your way around Apache directives, it might not be for you. It also relies on a PHP file. If you're not using PHP, you're out of luck. I'm no Apache expert, but I have some experience redirecting requests using .htaccess. Setup for adaptive images proved difficult because:
 

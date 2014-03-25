@@ -2,14 +2,14 @@
 author: Tony Thomas
 comments: true
 date: 2012-03-03 20:39:14+00:00
-layout: posts
+layout: post
 slug: fun-with-jquery-tubular
 title: Fun With JQuery Tubular
 wordpress_id: 670
 categories:
 - JavaScript
 - JQuery
-- web development
+- web-development
 ---
 
 I came across [Sean McCambridge's](http://www.seanmccambridge.com/) [JQuery Tubular](http://www.seanmccambridge.com/tubular/) plugin a while back and I thought it would be fun to experiment with it. [So I set up a little demo](/examples/tubular/tubular.html) and I thought I'd walk through it here.

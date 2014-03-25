@@ -2,14 +2,14 @@
 author: Tony Thomas
 comments: true
 date: 2012-03-09 17:08:14+00:00
-layout: posts
+layout: post
 slug: using-impress-js
 title: Using Impress.js
 wordpress_id: 678
 categories:
 - JavaScript
 - JQuery
-- web development
+- web-development
 ---
 
 **Update II:** I updated the init method needed in the HTML.

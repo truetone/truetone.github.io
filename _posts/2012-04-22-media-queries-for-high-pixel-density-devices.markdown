@@ -2,16 +2,16 @@
 author: Tony Thomas
 comments: true
 date: 2012-04-22 23:46:12+00:00
-layout: posts
+layout: post
 slug: media-queries-for-high-pixel-density-devices
 title: Media Queries for High Pixel-density Devices
 wordpress_id: 689
 categories:
 - css
-- media queries
-- Mobile Technology
-- responsive design
-- web development
+- media-queries
+- Mobile-Technology
+- responsive-design
+- web-development
 ---
 
 Images continue to be a major challenge for mobile web development. [I've
@@ -23,7 +23,7 @@ Runyon](http://weedygarden.net/2010/10/retina-display-and-css-background-images/
 
 The technique involves creating two sets of background images. One
 standard-sized version and a double-sized version (@2x) for high pixel-density
-screens like the Retina display or Droid phone display.<!-- more --> For the
+screens like the Retina display or Droid phone display. For the
 purposes of this example, let's say I have a default icon that's 50px X 50px.
 
 {% highlight css %}
