@@ -1,5 +1,5 @@
 ---
-author: admin
+author: Tony Thomas
 comments: true
 date: 2012-04-22 23:46:12+00:00
 layout: posts
