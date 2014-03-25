@@ -12,25 +12,16 @@
     </head>
     <body>
         <div class="site">
-          <header>
+          <div class="header">
             <h1 class="title"><a href="/">{{ site.name }}</a></h1>
             <a class="extra" href="/">home</a>
-          </header>
-          <div class="content">
-            <article class="home main">
-                <p>I am a web developer for <a href="http://sua.umn.edu">Student Unions &amp; Activities</a>
-                at the University of Minnesota. We use PHP, Python, 
-                HTML5, CSS and JavaScript. We build using web standards.</p>
-
-                <p>I’ve played music in the Twin Cities in several bands over the
-                last 20 years.</p>
-
-                <p>I’m married with two daughters. My family is beautiful, smart
-                and challenging.</p>
-            </article>
-            <aside class="home meta">{{ content }}</aside>
           </div>
-          <footer>
+          <div class="content">
+            <article class="post">
+                {{ content }}
+            </article>
+          </div>
+          <div class="footer">
             <div class="contact">
               <p>
                 Tony Thomas<br>
@@ -44,7 +35,7 @@
                 <a href="https://twitter.com/truetone">twitter.com/truetone</a><br />
               </p>
             </div>
-          </footer>
+          </div>
         </div>
     </body>
 </html>

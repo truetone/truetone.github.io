@@ -2,7 +2,7 @@
 author: Tony Thomas
 comments: true
 date: 2012-03-09 17:08:14+00:00
-layout: default
+layout: posts
 slug: using-impress-js
 title: Using Impress.js
 wordpress_id: 678
@@ -27,7 +27,7 @@ able to code a web page and write styles.
 Right now you can only learn how to use Impress.js by reading the comments and
 experimenting. I thought it might be good to go through each of the features
 here to give a sense of it's capabilities. If you're interested, there aren't
-really any insights here that you can't find in the source.<!-- more -->
+really any insights here that you can't find in the source.
 
 The first thing is that you have to have a story to tell. Impress.js does
 nothing for you if you don't have a narrative. So plan out what you want to
@@ -41,6 +41,8 @@ First you'll need to
 [download the JavaScript](https://github.com/bartaz/impress.js). 
 Next set up an HTML document with the HTML5 doctype. (Impress.js takes
 advantage of HTML5'S `data` attribute, so HTML5 is necessary.)
+
+{% highlight html linenos %}
 
     <!doctype html>
     <html lang="en">
@@ -56,6 +58,8 @@ advantage of HTML5'S `data` attribute, so HTML5 is necessary.)
     </body>
     </html>
 
+{% endhighlight %}
+
 The slides need to go into an element with the id of "impress." It's a div
 above, but it can be anything. The comments in the source also suggest adding
 the class, "impress-not-supported" to the `#impress` div. This class will be
@@ -70,7 +74,9 @@ class of "step." Positioning information is stored in `data` attributes. First
 off are the x and y coordinates. It's important to note that we're defining the
 x and y coordinates of the _center_ of the element in question.
 
+{% highlight html %}
     <div class="slide" data-x="-1500" data-y="-1000"><p>Our first slide</p></div>
+{% endhighlight %}
 
 You can give you slides ids so you can link to a particular slide. Id's are not
 required, however. If you don't add them, impress.js will add a #step-N id to
@@ -80,28 +86,36 @@ links will still work without JavaScript.
 
 The next dimension we can control is scale:
 
+{% highlight html %}
     <div id="title" class="step" data-x="0" data-y="0" data-scale="4"><p>Slide content</p></div>
+{% endhighlight %}
 
 Note the `data-scale` attribute above. In this case, the slide is scaled down
 by a factor of 4, then scaled up to full-scale during the transition.
 
 We can also control rotation:
 
+{% highlight html %}
     <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5"><p>Slide Content</p>
+{% endhighlight %}
 
 For this, use `data-rotate`. In the example above, the slide is rotated 90
 degrees.
 
 And now we go 3d:
 
+{% highlight html %}
     <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1"><p>Slide content.</p></div>
+{% endhighlight %}
 
 The `data-z` attribute above places this slide 3000 pixels away along the
 z-index.
 
 Finally, we can control rotation along axes:
 
+{% highlight html %}
     <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2"><p>
+{% endhighlight %}
 
 Those are the options. I had a little fun creating a [version of my
 resume](http://truetone.github.com/impress-resume/). It's pretty fun. I can
