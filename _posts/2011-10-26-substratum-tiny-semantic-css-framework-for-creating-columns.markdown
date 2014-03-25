@@ -2,7 +2,7 @@
 author: Tony Thomas
 comments: true
 date: 2011-10-26 02:28:28+00:00
-layout: post
+layout: posts
 slug: substratum-tiny-semantic-css-framework-for-creating-columns
 title: 'Substratum: Tiny, Semantic CSS Framework for Creating Columns'
 wordpress_id: 605

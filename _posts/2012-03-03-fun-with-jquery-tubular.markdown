@@ -2,7 +2,7 @@
 author: Tony Thomas
 comments: true
 date: 2012-03-03 20:39:14+00:00
-layout: post
+layout: posts
 slug: fun-with-jquery-tubular
 title: Fun With JQuery Tubular
 wordpress_id: 670
