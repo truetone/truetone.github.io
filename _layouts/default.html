@@ -1,50 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.min.css">
-    </head>
-    <body>
-        <div class="site">
-          <header>
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </header>
-          <div class="content">
-            <article class="home main">
-                <p>I am a web developer for <a href="http://sua.umn.edu">Student Unions &amp; Activities</a>
-                at the University of Minnesota. We use PHP, Python, 
-                HTML5, CSS and JavaScript. We build using web standards.</p>
+{% include header.html %}
+<article class="home main">
+    <p>I am a web developer for <a href="http://sua.umn.edu">Student Unions &amp; Activities</a>
+    at the University of Minnesota. We use PHP, Python, 
+    HTML5, CSS and JavaScript. We build using web standards.</p>
 
-                <p>I’ve played music in the Twin Cities in several bands over the
-                last 20 years.</p>
+    <p>I’ve played music in the Twin Cities in several bands over the
+    last 20 years.</p>
 
-                <p>I’m married with two daughters. My family is beautiful, smart
-                and challenging.</p>
-            </article>
-            <aside class="home meta">{{ content }}</aside>
-          </div>
-          <footer>
-            <div class="contact">
-              <p>
-                Tony Thomas<br>
-                Father, Husband, Web Developer, Musician<br>
-                truetone@gmail.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/truetone">github.com/truetone</a><br />
-                <a href="https://twitter.com/truetone">twitter.com/truetone</a><br />
-              </p>
-            </div>
-          </footer>
-        </div>
-    </body>
-</html>
+    <p>I’m married with two daughters. My family is beautiful, smart
+    and challenging.</p>
+</article>
+<aside class="home meta">{{ content }}</aside>
+{% include header.html %}

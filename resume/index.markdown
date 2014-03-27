@@ -2,7 +2,7 @@
 author: admin
 comments: true
 date: 2008-03-26 23:54:35+00:00
-layout: page
+layout: posts
 slug: resume
 title: Resume
 wordpress_id: 5

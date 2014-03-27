@@ -1,16 +1,45 @@
 @import "normalize";
 @import 'bourbon/bourbon';
 
+$background: rgb(238,252,255);
+$white: #fff;
+$black: rgb(2,3,4);
+$red: rgb(240,5,90);
+$red-active: rgb(240,0,0);
+$green: rgb(96,144,0);
+
 html, body {
-    color: rgb(2,3,4);
+    background: $background;
+    color: $black;
+    font-family: 'Pontano Sans', Verdana, Helvetica, sans-serif;
     font-size: 1.2em;
-    line-height: 1.2;
+    line-height: 1.4;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: $red;
+    font-family: 'Bevan', Georgia, serif;
+    a {
+        color: $red;
+    }
+}
+a {
+    color: $red;
+    text-decoration: underline;
+    &:visited {
+        text-decoration: none;
+    }
+    &:active {
+        color: $red-active;
+    }
 }
 div, article, aside {
     @include box-sizing(border-box);
 }
-article, aside, header, footer {
-    padding: 2em;
+article, aside, {
+    padding: 0 2em;
+}
+header, footer {
+    padding: 1em 2em 0;
 }
 a {
     text-decoration: none;
@@ -22,6 +51,7 @@ pre code {
     font-size: .8em;
 }
 .site {
+    background: $white;
     margin: 0 auto;
     max-width: 1024px;
 }
