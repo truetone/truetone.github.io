@@ -1,20 +1,22 @@
 ---
 author: admin
 comments: true
-date: 2008-03-26 23:54:35+00:00
+date: {}
 layout: posts
 slug: resume
 title: Resume
 wordpress_id: 5
+published: true
 ---
+
 ## Resume
 
 [anthonygthomas.com](http://anthonygthomas.com); 612-827-2140
 
 ### Qualifications Summary
-  * 10 years experience in web design and development
+  * 13 years experience in web design and development
   * 10 years experience in database administration
-  * Over 6 years project management experience working with open-source solutions to save money for small businesses and research studies
+  * Over 6 years project management experience
   * Over 3 years multimedia publishing
   * Over 3 years research data management experience
 
@@ -94,6 +96,7 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 
 ### Presentations
 
+* [6 Simple Tips to Immediately Improve Your JavaScript](http://truetone.github.io/reveal.js/presentations/js/tips/)
 * [Witness the Power of This Fully Armed and Operational Website: The Emerging Power of WebSockets](http://truetone.github.io/fullyarmedandoperational-presentation/#/title)
 * [Mobile Web Development](http://www.slideshare.net/truetone/sua-mobile-development)
 * [Project Tools in Web Development: A Case Study](http://www.slideshare.net/kmloomis/minne-webcon-2011v5)
