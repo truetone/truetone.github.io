@@ -14,7 +14,7 @@ published: true
 [anthonygthomas.com](http://anthonygthomas.com); 612-827-2140
 
 ### Qualifications Summary
-  * 10 years experience in web design and development
+  * 13 years experience in web design and development
   * 10 years experience in database administration
   * Over 6 years project management experience
   * Over 3 years multimedia publishing
