@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Mobile Browser Height &amp; Width Tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function()
+			{
+				$('#screen-height').text(screen.height);
+				$('#screen-width').text(screen.width);
+				$('#device-pixel-ratio').text(window.devicePixelRatio);
+				$('#height-times-ratio').text(screen.height * window.devicePixelRatio);
+				$('#width-times-ratio').text(screen.width * window.devicePixelRatio);
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Mobile Browser Height &amp; Width Tests</h1>
+		<dl>
+			<dt>screen.height</dt>
+			<dd id="screen-height"></dd>
+			<dt>screen.width</dt>
+			<dd id="screen-width"></dd>
+			<dt>window.devicePixelRatio</dt>
+			<dd id="device-pixel-ratio"></dd>
+			<dt>screen.height * window.devicePixelRatio</dt>
+			<dd id="height-times-ratio"></dd>
+			<dt>screen.width * window.devicePixelRatio</dt>
+			<dd id="width-times-ratio"></dd>
+		</dl>
+	</body>
+</html>

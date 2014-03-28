@@ -1,0 +1,51 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Stardos Stencil', cursive;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 64px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 1.4;
+}
+a {
+	color: #fff;
+	font-weight: bold;
+}
+body {
+	background: #000;
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: bold;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	z-index: 1000;
+}
+p {
+	color: #fff;
+	font-family: 'Muli', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	left: 20px;
+	line-height: 1.4;
+	position: absolute;
+	word-spacing: 0em;
+	text-decoration: none;
+	text-transform: none;
+	width: 150px;
+	z-index: 1000;
+}
+p#first {
+	top: 20px;
+}
+p#last {
+	top: 50px;
+}
+

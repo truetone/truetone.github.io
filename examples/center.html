@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Vertically and Horizontally Centered Element</title>
+
+		<style>
+			section {
+				border-bottom: 1px solid #777;
+				border-top: 1px solid #777;
+				-webkit-box-align: center;
+				-webkit-box-orient: vertical;
+				-moz-box-orient: vertical;
+				-ms-box-orient: vertical;
+				box-orient: vertical;
+				-webkit-box-pack: center;
+				-moz-box-pack: center;
+				-ms-box-pack: center;
+				box-pack: center;
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-box;
+				display: box;
+				min-height: 500px;
+				width: 100%; 
+			}
+			div {
+				background: #ccc;
+				border-radius: 0.5em;
+				padding: 1em;
+				width: 150px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<header>
+			<h1>Vertically and Horizontally Centered Element</h1>
+		</header>
+		<section>
+			<div>This will be vertically and horizontally centered within the section.</div>
+		</section>
+	</body>
+</html>

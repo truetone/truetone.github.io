@@ -1,0 +1,149 @@
+a {
+    color: #111130;
+}
+a:active {
+    color: #ECE753;
+}
+a:visited,
+a:hover {
+    text-decoration: none
+}
+html {
+    background: #F0F0F0;
+    color: #161515;
+    font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+    font-size: 100%;
+}
+div {
+    display: block;
+}
+body {
+    /* background: url(images/green-semi.png) no-repeat scroll 1em 90px #FFFFFF; */
+    background: #fff;
+    -moz-box-shadow: 1px 1px 5px #161515;
+    -webkit-box-shadow: 1px 1px 1px #161515;
+    box-shadow: 1px 1px 1px #161515;
+    height: 600px;
+    line-height: 1.4em;
+    margin: 2em auto;
+    max-width: 1280px;
+    padding: 1em;
+    position: relative;
+    width: 95%;
+    z-index: 0;
+}
+section#main {
+    display: block;
+    float: left;
+    position: relative;
+    width: 62%
+}
+section#links {
+    display: block;
+    float: left;
+    margin: 0 0 0 3%;
+    width: 35%;
+}
+section#links p.last {
+    font-family: "Droid Serif", Georgia, Times, serif;
+    font-size: 2em;
+    margin: 0.6em 0 1em 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Droid Serif", Georgia, Times, serif;
+    font-weight: bold;
+    line-height: 0.75em;
+    margin: 0 0 0.25em 0;
+}
+h1 {
+    font-size: 5em;
+    text-shadow: 3px 3px 3px #CCCCCC;
+}
+h2 {
+    font-size: 1.5em;
+    margin: 0 0 0.3em 0;
+}
+h2#twitter-heading {
+    margin-top: 1em;
+}
+h3 {
+    font-size: 1.15em;
+    margin: 0 0 0.3em 0;
+}
+hr {
+    background: transparent;
+    border: none;
+    clear: left;
+}
+img.main-image {
+    position: relative;
+    width: 100%;
+}
+p {
+    line-height: 1.4em;
+    margin: 0 0 2em 0;
+}
+li {
+    margin: 0 0 0.75em 0;
+}
+li.last a {
+    margin-bottom: 1em;
+}
+ul#social-media-list li {
+    display: inline-block;
+    float: left;
+    height: 32px;
+    margin: 0.3em 0 0 0.3em;
+    text-indent: -9999em;
+    width: 32px;
+}
+ul#social-media-list li.first {
+    margin-left: 0;
+}
+ul#social-media-list li a {
+    display: block;
+    height: 32px;
+    width: 32px;
+}
+li#blog {
+    background: url(/images/social/rss_32.png) no-repeat;
+}
+li#delicious {
+    background: url(/images/social/delicious_32.png) no-repeat;
+}
+li#email {
+    background: url(/images/social/email_32.png) no-repeat;
+}
+li#facebook {
+    background: url(/images/social/facebook_32.png) no-repeat;
+}
+li#google {
+    background: url(/images/social/google_32.png) no-repeat;
+}
+li#linkedin {
+    background: url(/images/social/linkedin_32.png) no-repeat;
+    clear: left
+}
+li#posterous {
+    background: url(/images/social/posterous_32.png) no-repeat;
+}
+li#skype {
+    background: url(/images/social/skype_32.png) no-repeat;
+}
+li#tumblr {
+    background: url(/images/social/tumblr_32.png) no-repeat;
+}
+li#twitter {
+    background: url(/images/social/twitter_32.png) no-repeat;
+}
+.accessible {
+    height: 1px !important;
+    left: -9999px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -9999px !important;
+    width: 1px !important;
+}
+.wrap {
+    clear: left;
+}
