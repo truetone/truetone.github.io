@@ -72,3 +72,53 @@ footer {
     clear: both;
     width: 100%;
 }
+
+.loadingpulse {
+  width: 24px;
+  height: 24px;
+  
+  &:before {
+    display: block;
+    
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    
+    background-color: #ccc;
+    
+    content: "";
+    
+    animation: loadingpulse 1s ease infinite;
+    border-radius: 100%;
+  }
+}
+@keyframes loadingpulse {
+  to {
+    opacity: 0;
+    
+    transform: scale( 2, 2 );
+  }
+}
+
+#moon-container {
+    background: black;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+    width: 60px;
+}
+
+.orb {
+    border-radius: 25px;
+    height: 50px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 50px;
+}
+#moon {
+    background: white;
+}
+#shadow {
+    background: black;
+}

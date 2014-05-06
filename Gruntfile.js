@@ -19,7 +19,6 @@ module.exports = function(grunt) {
                 files: {
                     '<%= pkg.jsMinDest %>base.min.js': [
                             '<%= pkg.libDir %>handlebars-v1.3.0.js',
-                            '<%= pkg.srcDir %>weather.js'
                     ]
                 }
             }
