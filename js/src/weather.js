@@ -198,3 +198,17 @@ Handlebars.registerHelper('multiplyByOneHundred', function(v) {
     "use strict";
     return v * 100;
 });
+
+Handlebars.registerHelper('getMoonPhase', function(v) {
+    "use strict";
+    var borderSide = "left",
+        moonWidth = 50,
+        value = parseInt(moonWidth * v) + 'px;';
+
+    if (parseFloat(v) > .50) {
+        borderSide = "right";
+        value = (100 - parseInt(moonWidth * v)) + 'px;';
+    }
+    return "border-" + borderSide + ":solid white " + value;
+});
+

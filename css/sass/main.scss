@@ -58,15 +58,13 @@ pre code {
 .content {
     @include clearfix;
 }
-.home {
-    &.main {
-        float: left;
-        width: 66.66666%;
-    }
-    &.meta {
-        float: left;
-        width: 33.33332%;
-    }
+.main {
+    float: left;
+    width: 66.66666%;
+}
+.meta {
+    float: left;
+    width: 33.33332%;
 }
 footer {
     clear: both;
