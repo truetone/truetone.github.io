@@ -207,7 +207,7 @@ Handlebars.registerHelper('getMoonPhase', function(v) {
 
     if (parseFloat(v) > .50) {
         borderSide = "right";
-        value = (100 - parseInt(moonWidth * v)) + 'px;';
+        value = (parseInt(moonWidth * v)) + 'px;';
     }
     return "border-" + borderSide + ":solid white " + value;
 });
