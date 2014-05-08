@@ -203,12 +203,22 @@ Handlebars.registerHelper('getMoonPhase', function(v) {
     "use strict";
     var borderSide = "left",
         moonWidth = 50,
-        value = parseInt(moonWidth * v) + 'px;';
+        leftValue = parseInt(moonWidth * v) + 'px;',
+        rightValue,
+        rightStyle;
 
-    if (parseFloat(v) > .50) {
-        borderSide = "right";
-        value = (parseInt(moonWidth * v)) + 'px;';
+    if (parseFloat(v) < .5) {
+        return "border-" + borderSide + ":solid white " + leftValue;
+    } else {
+        rightValue = (parseInt(moonWidth * v)) 
+
+        // Fixes instances of rounding up to 26
+        if (rightValue > 25) {
+            rightValue = 25;
+        }
+
+        rightStyle = rightValue + 'px;';
+        return "border-" + borderSide + ":solid white " + leftValue + " border-right: solid black " + rightStyle;
     }
-    return "border-" + borderSide + ":solid white " + value;
 });
 
