@@ -23,6 +23,16 @@
             {% raw %}
             <article class="main">
                 <h3>Current Conditions</h3>
+                {{#if alerts}}
+                    {{#each alerts}}
+                    <p class="alert most-important"><a class="alert" href="{{this.url}}">{{this.title}}</a></p>
+                    <details>
+                        <summary>More Info</summary>
+                        <p>{{this.description}}</p>
+                    </details>
+                    {{/each}}
+                {{/if}}
+
                 <p class="most-important">{{currently.summary}} &amp; {{toInt
                 currently.temperature}}&deg; F; Feels like {{toInt
                 currently.apparentTemperature}}&deg; F</p>
