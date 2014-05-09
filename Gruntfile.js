@@ -11,6 +11,13 @@ module.exports = function(grunt) {
             '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
             ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
         // Task configuration.
+        sass: {
+            dist: {
+                files: {
+                    'css/main.min.css' : 'css/sass/main.scss'
+                }
+            }
+        },
         uglify: {
             options: {
                 banner: '<%= banner %>'
@@ -47,8 +54,11 @@ module.exports = function(grunt) {
         },
         watch: {
             gruntfile: {
-                files: '<%= jshint.gruntfile.src %>',
-                tasks: ['jshint:gruntfile']
+                files: [
+                    '<%= jshint.gruntfile.src %>',
+                    'css/sass/*.scss',
+                ],
+                tasks: ['jshint:gruntfile', 'sass']
             },
         }
     });
@@ -56,9 +66,10 @@ module.exports = function(grunt) {
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'watch']);
 
 };

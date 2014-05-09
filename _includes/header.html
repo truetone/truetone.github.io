@@ -10,18 +10,25 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.min.css">
         <link href="http://fonts.googleapis.com/css?family=Bevan" rel="stylesheet" type="text/css">
-        <link href="http://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     </head>
     <body>
         <div class="site">
           <header>
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <nav>
-                <ul>
-                    <li><a class="extra" href="/">Home</a></li>
-                    <li><a href="/resume/">R&eacute;sum&eacute;</a></li>
-                </ul>
-            </nav>
+            <div class="column-container">
+                <div class="column">
+                    <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+                </div>
+                <div class="column">
+                    <nav>
+                        <ul class="main-nav">
+                            <li class="main-nav-item"><a class="extra" href="/">Home</a></li>
+                            <li class="main-nav-item"><a href="/resume/">R&eacute;sum&eacute;</a></li>
+                            <li class="main-nav-item"><a href="/weather/">Weather Project</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
           </header>
           <div class="content">

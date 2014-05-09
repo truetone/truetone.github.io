@@ -1,7 +1,7 @@
 {% include header.html %}
-<article id="heading">
-    {{content}}
-    <div id="forecast"><span class="status-indicator"></span></div>
-</article>
-<aside class="home meta"></aside>
+<div id="forecast-container">
+    <article id="forecast">
+        {{content}}
+    </article>
+</div>
 {% include weather-footer.html %}

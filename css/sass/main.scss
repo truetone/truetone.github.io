@@ -4,18 +4,23 @@
 $background: rgb(238,252,255);
 $white: #fff;
 $black: rgb(2,3,4);
+$grey: rgb(233,233,233);
 $red: rgb(240,5,90);
 $red-active: rgb(240,0,0);
 $green: rgb(96,144,0);
 
+$media-query-min-width: 780px;
+
+/* Defaults */
 html, body {
     background: $background;
     color: $black;
-    font-family: 'Pontano Sans', Verdana, Helvetica, sans-serif;
+    font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
     font-size: 1.2em;
     line-height: 1.4;
 }
 h1, h2, h3, h4, h5, h6 {
+    clear: both;
     color: $red;
     font-family: 'Bevan', Georgia, serif;
     a {
@@ -24,31 +29,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 a {
     color: $red;
-    text-decoration: underline;
+    text-decoration: none;
     &:visited {
         text-decoration: none;
     }
     &:active {
         color: $red-active;
     }
-}
-div, article, aside {
-    @include box-sizing(border-box);
-}
-article, aside, {
-    padding: 0 2em;
-}
-header, footer {
-    padding: 1em 2em 0;
-}
-a {
-    text-decoration: none;
     &:hover {
         text-decoration: underline;
     }
 }
+div, article, aside {
+    @include box-sizing(border-box);
+}
 pre code {
     font-size: .8em;
+}
+dt {
+    font-weight: bold;
 }
 .site {
     background: $white;
@@ -58,17 +57,34 @@ pre code {
 .content {
     @include clearfix;
 }
-.main {
-    float: left;
-    width: 66.66666%;
-}
-.meta {
-    float: left;
-    width: 33.33332%;
-}
 footer {
     clear: both;
     width: 100%;
+}
+
+/* Margins and padding */
+article, aside, {
+    padding: 0 2em;
+}
+header, footer {
+    padding: 1em 2em 0;
+}
+
+.main-nav {
+    list-style: none;
+}
+.main-nav-item {
+    display: inline-block;
+}
+
+.condensed {
+    margin: .2em 0;
+}
+.most-important {
+    font-size: 1.15em;
+}
+.important {
+    font-size: 1.1em;
 }
 
 .loadingpulse {
@@ -120,3 +136,43 @@ footer {
 #shadow {
     background: black;
 }
+
+.main {
+    width: 100%;
+}
+.meta {
+    width: 100%;
+}
+
+@media screen and (min-width: $media-query-min-width) {
+    .main {
+        float: left;
+        width: 66.66666%;
+    }
+
+    .meta {
+        float: left;
+        width: 33.33332%;
+    }
+
+    .column-container {
+        @include clearfix;
+    }
+
+    .column {
+        float: left;
+        margin-right: 10%;
+        width: 45%;
+        &:last-child {
+            margin-right: 0;
+        }
+        &.narrow {
+            width: 30%;
+            margin-right: 5%;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+

@@ -97,7 +97,7 @@ var Forecast = {
             var current_source = $("#current-conditions-template").html(),
                 current_template = Handlebars.compile(current_source),
                 current_html = current_template(data);
-            $('#forecast').html(current_html);
+            $('#forecast-container').html(current_html);
 
             console.log(data);
         },
@@ -222,3 +222,22 @@ Handlebars.registerHelper('getMoonPhase', function(v) {
     }
 });
 
+Handlebars.registerHelper('floatToProbabilityPhrase', function(v) {
+    "use strict";
+    if (v > .1) {
+        return "Not likely.";
+    } else if (v > .2) {
+        return "Could happen.";
+    } else if (v > .3) {
+        return "Mmm. Maybe.";
+    } else if (v > .4) {
+        return "Plan for it.";
+    } else if (v > .5) {
+        return "Pretty good.";
+    } else if (v > .6) {
+        return "Pret-tay, pret-tay, pret-tay...good.";
+    } else if (v > .7) {
+        return "Count on it."
+    }
+    return "Not happening.";
+});
