@@ -440,6 +440,10 @@ header, footer {
   color: white;
   padding: .3em; }
 
+#map-canvas {
+  height: 200px;
+  width: 200px; }
+
 @media screen and (min-width: 780px) {
   .main {
     float: left;

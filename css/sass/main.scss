@@ -151,6 +151,11 @@ header, footer {
     padding: .3em;
 }
 
+#map-canvas {
+    height: 200px;
+    width: 200px;
+}
+
 @media screen and (min-width: $media-query-min-width) {
     .main {
         float: left;

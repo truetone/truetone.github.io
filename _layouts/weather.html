@@ -1,4 +1,9 @@
 {% include header.html %}
+<article>
+    <input id="address" type="textbox" value="Minneapolis, MN">
+    <input type="button" value="Geocode" onclick="codeAddress()">
+    <div id="map-canvas"></div>
+</article>
 <div id="forecast-container">
     <article id="forecast">
         {{content}}
