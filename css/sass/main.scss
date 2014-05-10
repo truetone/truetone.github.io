@@ -75,6 +75,11 @@ header, footer {
 }
 .main-nav-item {
     display: inline-block;
+    border-right: 1px solid $grey;
+    padding-right: .3em;
+    &:last-child {
+        border: none;
+    }
 }
 
 .condensed {
@@ -153,7 +158,13 @@ header, footer {
 
 #map-canvas {
     height: 200px;
+    margin-top: 1em;
     width: 200px;
+}
+
+#wind-bearing {
+    display: inline-block;
+    margin-left: .4em;
 }
 
 @media screen and (min-width: $media-query-min-width) {

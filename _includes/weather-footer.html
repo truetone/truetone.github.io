@@ -49,7 +49,8 @@
                 <div class="column-container">
                     <div class="column">
                         <p class="condensed">Wind: {{toInt currently.windSpeed}} mph from the
-                        {{getCardinalDirection currently.windBearing}}</p>
+                        {{getCardinalDirection currently.windBearing}} 
+                        <span id="wind-bearing" style="transform:rotate({{currently.windBearing}}deg);-webkit-transform:rotate({{currently.windBearing}}deg);-moz-transform:rotate({{currently.windBearing}}deg);-ms-transform:rotate({{currently.windBearing}}deg)">&darr;</span></p>
                     </div>
                     <div class="column">
                         <p class="condensed">{{floatToPercent currently.cloudCover}} Cloud Cover</p>
@@ -119,7 +120,7 @@
                         <dt>Visibility</dt>
                         <dd>{{visibility}} miles</dd>
                         <dt>Wind Speed</dt>
-                        <dd>{{toInt windSpeed}} mph from the {{getCardinalDirection windBearing}}</dd>
+                        <dd>{{toInt windSpeed}} mph from the {{getCardinalDirection windBearing}}<span id="wind-bearing" style="transform:rotate({{windBearing}}deg);-webkit-transform:rotate({{windBearing}}deg);-moz-transform:rotate({{windBearing}}deg);-ms-transform:rotate({{windBearing}}deg)">&darr;</span></dd>
                     </dl>
 
                 {{/each}}
@@ -162,7 +163,7 @@
                         <dt>Visibility</dt>
                         <dd>{{visibility}} miles</dd>
                         <dt>Wind Speed</dt>
-                        <dd>{{toInt windSpeed}} mph from the {{getCardinalDirection windBearing}}</dd>
+                        <dd>{{toInt windSpeed}} mph from the {{getCardinalDirection windBearing}}<span id="wind-bearing" style="transform:rotate({{windBearing}}deg);-webkit-transform:rotate({{windBearing}}deg);-moz-transform:rotate({{windBearing}}deg);-ms-transform:rotate({{windBearing}}deg)">&darr;</span></dd>
                     </dl>
                 {{/each}}
 

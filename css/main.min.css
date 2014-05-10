@@ -378,7 +378,11 @@ header, footer {
   list-style: none; }
 
 .main-nav-item {
-  display: inline-block; }
+  display: inline-block;
+  border-right: 1px solid #e9e9e9;
+  padding-right: .3em; }
+  .main-nav-item:last-child {
+    border: none; }
 
 .condensed {
   margin: .2em 0; }
@@ -442,7 +446,12 @@ header, footer {
 
 #map-canvas {
   height: 200px;
+  margin-top: 1em;
   width: 200px; }
+
+#wind-bearing {
+  display: inline-block;
+  margin-left: .4em; }
 
 @media screen and (min-width: 780px) {
   .main {
