@@ -1,145 +1,203 @@
-var Forecast = {
-        self: this,
-        lat: "44.972845",
-        lon: "-93.235055",
-        cardinalValues: null,
-        cardinalDirections:  [
-            "N",
-            "NNE",
-            "NE",
-            "ENE",
-            "E",
-            "ESE",
-            "SE",
-            "SSE",
-            "S",
-            "SSW",
-            "SW",
-            "WSW",
-            "W",
-            "WNW",
-            "NW",
-            "NNW",
-        ],
+function Forecast() {
+    "use strict";
+    // Start at the center of the universe.
+    this.lat = "44.972845";
+    this.lon = "-93.235055";
+    this.cardinalValues = null;
+    this.cardinalDirections = [
+        "N",
+        "NNE",
+        "NE",
+        "ENE",
+        "E",
+        "ESE",
+        "SE",
+        "SSE",
+        "S",
+        "SSW",
+        "SW",
+        "WSW",
+        "W",
+        "WNW",
+        "NW",
+        "NNW",
+    ];
+}
 
-        setCoords: function(position) {
-            "use strict";
-            var self = Forecast;
-            self.lat = position.coords.latitude;
-            self.lon = position.coords.longitude;
-            self.init();
-        },
+Forecast.prototype = {
+    setCoords: function(position) {
+        "use strict";
+        var $dfd = $.Deferred();
+        this.lat = position.coords.latitude;
+        this.lon = position.coords.longitude;
+        $dfd.resolve();
+        return $dfd.promise();
+    },
 
-        cardinalBuilder: function() {
-            "use strict";
-            /**
-             * Cardinal values taken from
-             * http://climate.umn.edu/snow_fence/components/winddirectionanddegreeswithouttable3.htm
-             */
-            var gtValues = [
-                    348.75,
-                    11.25,
-                    33.75,
-                    56.25,
-                    78.75,
-                    101.25,
-                    123.75,
-                    146.25,
-                    168.75,
-                    191.25,
-                    213.75,
-                    236.25,
-                    258.75,
-                    281.25,
-                    303.75,
-                    326.25
-                ],
-                $dfd = $.Deferred(),
-                cardinals = [];
-            
-            $.each(gtValues, function(k, v) {
-                var ltValue;
+    cardinalBuilder: function() {
+        "use strict";
+        /**
+        * Cardinal values taken from
+        * http://climate.umn.edu/snow_fence/components/winddirectionanddegreeswithouttable3.htm
+        */
+        var gtValues = [
+                348.75,
+                11.25,
+                33.75,
+                56.25,
+                78.75,
+                101.25,
+                123.75,
+                146.25,
+                168.75,
+                191.25,
+                213.75,
+                236.25,
+                258.75,
+                281.25,
+                303.75,
+                326.25
+            ],
+            $dfd = $.Deferred(),
+            cardinals = [];
+        
+        $.each(gtValues, function(k, v) {
+            var ltValue;
 
-                if (typeof gtValues[k + 1] !== "undefined"){
-                    ltValue = gtValues[k + 1] + 0.01;
-                } else {
-                    ltValue = gtValues[0] - 0.01;
+            if (typeof gtValues[k + 1] !== "undefined"){
+                ltValue = gtValues[k + 1] + 0.01;
+            } else {
+                ltValue = gtValues[0] - 0.01;
+            }
+            cardinals.push([v, ltValue]);
+        });
+
+        this.cardinalValues = cardinals;
+
+        console.log(cardinals);
+
+        $('#forecast').append('<p>Calculating cardinal wind directions...</p>');
+
+        $dfd.resolve();
+        return $dfd.promise();
+    },
+
+    getCardinalDirection: function(degreeValue) {
+        "use strict";
+        var result,
+            cds = this.cardinalDirections;
+
+        $.each(this.cardinalValues, function(k, v) {
+            if (k === 0) {
+                if (degreeValue > v[0] || degreeValue < v[1]) {
+                    result = cds[k];
+                    return false;
                 }
-                cardinals.push([v, ltValue]);
-            });
-            this.cardinalValues = cardinals;
-            console.log(cardinals);
-            $('#forecast').append('<p>Calculating cardinal wind directions...</p>');
-            return $dfd.promise();
-        },
-
-        getCardinalDirection: function(degreeValue) {
-            "use strict";
-            var result;
-            $.each(this.cardinalValues, function(k, v) {
-                if (k === 0) {
-                    if (degreeValue > v[0] || degreeValue < v[1]) {
-                        result = Forecast.cardinalDirections[k];
-                        return false;
-                    }
-                } else {
-                    if (degreeValue > v[0] && degreeValue < v[1]) {
-                        result =  Forecast.cardinalDirections[k];
-                        return false;
-                    }
+            } else {
+                if (degreeValue > v[0] && degreeValue < v[1]) {
+                    result =  cds[k];
+                    return false;
                 }
-            });
-            return result;
-        },
+            }
+        });
+        return result;
+    },
 
-        parseWeather: function(data) {
-            "use strict";
+    parseWeather: function(data) {
+        "use strict";
+        console.log("Running parseWeather");
+        var current_source = $("#current-conditions-template").html(),
+            current_template = Handlebars.compile(current_source),
+            current_html = current_template(data);
+        $('#forecast-container').html(current_html);
+    },
+
+    requestFailed: function(data, status) {
+        "use strict";
+        console.log("data: " + data + " status: " + status);
+    },
+
+    sendRequest: function(lat, lon) {
+        "use strict";
+        var self = this,
+            $request = $.ajax({
+            url: "http://forecast-truetone.rhcloud.com/" +
+                                                lat + "/" +
+                                                lon + "/",
+            type: "GET",
+            dataType: "jsonp"
+        });
+        console.log(lat + '/' + lon);
+        $('#forecast').append('Command center responded with data...');
+        $request.done(function(data) {
             var current_source = $("#current-conditions-template").html(),
                 current_template = Handlebars.compile(current_source),
                 current_html = current_template(data);
+
             $('#forecast-container').html(current_html);
 
-            console.log(data);
-        },
+            self.parseWeather(data);
 
-        requestFailed: function(data, status) {
-            "use strict";
-            console.log("data: " + data + " status: " + status);
-        },
-
-        sendRequest: function(lat, lon) {
-            "use strict";
-            var self = Forecast,
-                $request = $.ajax({
-                url: "http://forecast-truetone.rhcloud.com/" +
-                                                   lat + "/" +
-                                                   lon + "/",
-                type: "GET",
-                dataType: "jsonp"
+            })
+            .fail(function() {
+                self.requestFailed();
             });
-            console.log(lat + '/' + lon);
-            $('#forecast').append('Command center responded with data...');
-            $request.done(self.parseWeather)
-                    .fail(self.requestFailed);
-        },
+    },
 
-        init: function() {
-            "use strict";
-            var self = Forecast;
-            console.log("Running init.");
-            self.cardinalBuilder();
+    init: function(lat, lon) {
+        "use strict";
+        var $dfd = $.Deferred();
+        console.log("Running init.");
+        this.cardinalBuilder()
+        .done(function() {
             $('#forecast').append('<p>Requesting data from forecast command center...</p>');
-            self.sendRequest(self.lat, self.lon);
-        }
-    };
+            //this.sendRequest(lat, lon);
+        });
+        $dfd.resolve();
+        return $dfd.promise();
+    }
+};
 
 $('#forecast').append('<p>Initializing Forecast engine...</p>');
 
-navigator.geolocation.getCurrentPosition(Forecast.setCoords);
+f = new Forecast();
+f.init();
+
+navigator.geolocation.getCurrentPosition(function(position) {
+    f.setCoords(position)
+
+    .done(function() {
+        "use strict";
+        var $request = $.ajax({
+            url: "http://forecast-truetone.rhcloud.com/" +
+                                                f.lat + "/" +
+                                                f.lon + "/",
+            type: "GET",
+            dataType: "jsonp"
+        })
+
+        .done(function(data) {
+            
+            console.log(data);
+
+            var current_source = $("#current-conditions-template").html(),
+                current_template = Handlebars.compile(current_source),
+                current_html = current_template(data);
+            
+            $('#forecast-container').html(current_html);
+
+            $('#forecast').append('Command center responded with data...');
+        })
+
+        .fail(function() {
+            f.requestFailed();
+        });
+    });
+});
 
 Handlebars.registerHelper('getCardinalDirection', function(degreeValue) {
     "use strict";
-    return Forecast.getCardinalDirection(degreeValue);
+    return f.getCardinalDirection(degreeValue);
 });
 
 Handlebars.registerHelper('floatToPercent', function(v) {
@@ -241,3 +299,45 @@ Handlebars.registerHelper('floatToProbabilityPhrase', function(v) {
     }
     return "Not happening.";
 });
+
+/* Google Maps API */
+
+var geocoder,
+    map;
+
+function initialize() {
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(f.lat, f.lon);
+    var mapOptions = {
+        zoom: 8,
+        center: latlng
+    }
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+
+function codeAddress() {
+    var address = document.getElementById('address').value;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+
+            console.log(results[0].geometry.location);
+            f.init(results[0].geometry.location['k'], results[0].geometry.location['A'])
+            .done(function() {
+                f.sendRequest(results[0].geometry.location['k'], results[0].geometry.location['A']);
+            });
+
+        } else {
+            alert('Geocode was not successful for the following reason. Here is some mumbo jumbo only developers will care about: ' + status);
+        }
+    });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+//$(window).on('load', initialize);
+        
