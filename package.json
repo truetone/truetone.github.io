@@ -1,7 +1,11 @@
 {
   "name": "anthonygthomas.com",
   "version": "0.0.1",
-  "homepage": "truetone.github.io",
+  "homepage": "http://truetone.github.io",
+  "repository" :
+    { "type" : "git",
+      "url" : "https://github.com/truetone/truetone.github.io"
+    },
   "author": {
     "name": "Tony Thomas",
     "email": "truetone@gmail.com",
