@@ -1,0 +1,20 @@
+{% include header.html %}
+<article>
+    <div class="column-container">
+        <div class="column">
+            <label for="address">Enter an address or ZIP code</label>
+            <input id="address" type="textbox" value="Minneapolis, MN">
+            <input type="button" value="Get Forecast" onclick="codeAddress()">
+            <div id="map-canvas"></div>
+        </div>
+        <div class="column">
+            <label for="pickadate">Choose a Date</label>
+            <input id="datepicker" type="textbox" >
+        </div>
+</article>
+<div id="forecast-container">
+    <article id="forecast">
+        {{content}}
+    </article>
+</div>
+{% include weather-footer-all.html %}

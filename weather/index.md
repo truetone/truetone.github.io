@@ -2,7 +2,7 @@
 author: Tony Thomas
 comments: true
 date: 2014-03-29 11:12:00+00:00
-layout: weather
+layout: weather-index
 title: Forecast.io API
 categories:
 - api

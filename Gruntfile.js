@@ -13,6 +13,9 @@ module.exports = function(grunt) {
         // Task configuration.
         sass: {
             dist: {
+                options: {
+                    style: 'compressed'
+                },
                 files: {
                     'css/main.min.css' : 'css/sass/main.scss'
                 }
@@ -40,17 +43,26 @@ module.exports = function(grunt) {
                 noarg: true,
                 sub: true,
                 undef: true,
-                unused: true,
+                //unused: true,
                 boss: true,
                 eqnull: true,
                 browser: true,
                 globals: {
-                    jQuery: true
+                    jQuery: true,
+                    Handlebars: true,
+                    moment: true,
+                    $: true,
+                    console: true,
+                    google: true,
+                    alert: true
                 }
             },
             gruntfile: {
                 src: 'Gruntfile.js'
             },
+            weather: {
+                src: 'js/src/weather.js'
+            }
         },
         watch: {
             gruntfile: {
@@ -58,8 +70,18 @@ module.exports = function(grunt) {
                     '<%= jshint.gruntfile.src %>',
                     'css/sass/*.scss',
                 ],
-                tasks: ['jshint:gruntfile', 'sass']
+                tasks: ['jshint:gruntfile','jshint:weather', 'sass', 'concat']
             },
+        },
+        concat: {
+            dist: {
+                src: [
+                    '<%= pkg.libDir %>moment.min.js',
+                    '<%= pkg.libDir %>picker.js',
+                    '<%= pkg.libDir %>picker.date.js',
+                ],
+                dest: '<%= pkg.jsMinDest %>lib.min.js'
+            }
         }
     });
 
@@ -68,8 +90,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'uglify', 'watch']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'watch', 'concat']);
 
 };
