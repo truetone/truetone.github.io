@@ -1,7 +1,7 @@
 ---
 author: Tony Thomas
 comments: true
-date: 2012-06-11 18:08:00+00:00
+date: 2014-06-11 18:08:00+00:00
 layout: post
 slug: github-hosting
 title: Github Hosting
