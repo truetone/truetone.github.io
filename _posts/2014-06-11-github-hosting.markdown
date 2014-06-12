@@ -9,8 +9,6 @@ categories:
 - hosting
 ---
 
-#Github Hosting
-
 I'm not completely happy with this design, nor am I even close to being finised with the [weather project](/weather/), but I decided it was time to switch from Wordpress to Jekyll and take advantage of Github's free hosting.
 
 I'll continue to change and improve this site over the coming months.
