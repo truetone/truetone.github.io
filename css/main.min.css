@@ -1,4 +1,4 @@
-/* normalize.css v2.1.1 | MIT License | git.io/normalize */
+/*! normalize.css v2.1.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -410,7 +410,6 @@ header, footer {
   to {
     opacity: 0;
     transform: scale(2, 2); } }
-
 #moon-container {
   background: black;
   height: 60px;
