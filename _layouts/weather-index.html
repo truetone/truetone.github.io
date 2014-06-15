@@ -1,0 +1,15 @@
+{% include header.html %}
+<div id="forecast-container" class="main">
+    <article id="forecast">
+        {{content}}
+    </article>
+</div>
+<aside class="meta">
+    <label for="address">Enter an address or ZIP code</label>
+    <input id="address" type="textbox">
+    <input type="button" value="Get Forecast" onclick="codeAddress()">
+    <div id="map-canvas"></div>
+    <label for="pickadate">Choose a Date</label>
+    <input id="datepicker" type="textbox" >
+</aside>
+{% include weather-footer-current.html %}

@@ -1,0 +1,75 @@
+          </div>
+          <footer>
+            <div class="contact">
+              <p>
+                Tony Thomas<br>
+                Father, Husband, Web Developer, Musician<br>
+                truetone at gmail.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/truetone">github.com/truetone</a><br />
+                <a href="https://twitter.com/truetone">twitter.com/truetone</a><br />
+              </p>
+            </div>
+          </footer>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="/js/minified/base.min.js"></script>
+        <script src="/js/minified/lib.min.js"></script>
+        <script src="/js/src/weather.js"></script>
+        <script id="current-conditions-template" type="text/x-handlebars-template">
+            {% raw %}
+            <article>
+                <h3>Current Conditions</h3>
+                {{#if alerts}}
+                    {{#each alerts}}
+                    <p class="alert most-important"><a class="alert" href="{{this.uri}}">{{this.title}}</a></p>
+                    <details>
+                        <summary>More Info</summary>
+                        <p>{{this.description}}</p>
+                    </details>
+                    {{/each}}
+                {{/if}}
+                <p id="current-temp">
+                    {{toInt currently.temperature}}&deg; F
+                </p>
+                <p id="feels-like"><small>Feels like {{toInt currently.apparentTemperature}}&deg; F</small></p>
+
+                <p id="summary" class="most-important">{{currently.summary}}</p>
+
+                <p id="chance"><small>Chance of precipitation:
+                {{floatToProbabilityPhrase currently.precipProbability}}
+                ({{floatToPercent currently.precipProbability}} Chance)</small></p>
+
+                {{#if precipIntensity}}
+                    <p>{{currently.precipIntensity}}</p>
+                {{/if}}
+
+                <p>Wind: {{toInt currently.windSpeed}} mph from the
+                {{getCardinalDirection currently.windBearing}} 
+                <span id="wind-bearing" style="transform:rotate({{currently.windBearing}}deg);-webkit-transform:rotate({{currently.windBearing}}deg);-moz-transform:rotate({{currently.windBearing}}deg);-ms-transform:rotate({{currently.windBearing}}deg)">&darr;</span></p>
+                <p class="condensed">{{floatToPercent currently.cloudCover}} Cloud Cover</p>
+
+                <p class="condensed">Humidity: {{floatToPercent currently.humidity}}</p>
+                <p class="condensed">Dew point: {{toInt currently.dewPoint}}&deg; F</p>
+
+                {{#if currently.nearestStormDistance}}
+                <p class="condensed">Nearest precipitation is
+                {{currently.nearestStormDistance}} miles to the
+                {{getCardinalDirection currently.nearestStormBearing}}.*</p>
+                {{/if}}
+
+                <p class="condensed">Visibility: {{currently.visibility}} Miles</p>
+                <p class="condensed">Barometric pressure: {{currently.pressure}}</p>
+                <p class="condensed">Ozone: {{currently.ozone}}</p>
+                
+                <p><small>*Take this information with a grain of
+                salt.</small></p>
+            </aside>
+            {% endraw %}
+        </script>
+    </body>
+</html>

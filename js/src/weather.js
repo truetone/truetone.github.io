@@ -117,18 +117,25 @@ Forecast.prototype = {
         console.log("data: " + data + " status: " + status);
     },
 
-    sendRequest: function(lat, lon) {
+    sendRequest: function(lat, lon, timestamp) {
         "use strict";
         var self = this,
-            $request = $.ajax({
-            url: "http://forecast-truetone.rhcloud.com/" +
-                                                lat + "/" +
-                                                lon + "/",
+            path = lat + "/" + lon + "/";
+
+        if (typeof timestamp !== 'undefined') {
+            path = path + "/" + timestamp;
+        }
+        
+        var $request = $.ajax({
+            url: "http://forecast-truetone.rhcloud.com/" + path,
             type: "GET",
             dataType: "jsonp"
         });
+
         console.log(lat + '/' + lon);
+
         $('#forecast').append('Command center responded with data...');
+
         $request.done(function(data) {
             var current_source = $("#current-conditions-template").html(),
                 current_template = Handlebars.compile(current_source),
@@ -147,20 +154,31 @@ Forecast.prototype = {
     init: function(lat, lon) {
         "use strict";
         var $dfd = $.Deferred();
+
+        console.log('lat: ', lat, 'lon: ', lon);
+
+        if (typeof lat !== 'undefined' && typeof lon !== 'undefined') {
+            this.lat = lat;
+            this.lon = lon;
+        }
+
         console.log("Running init.");
+
         this.cardinalBuilder()
+
         .done(function() {
             $('#forecast').append('<p>Requesting data from forecast command center...</p>');
-            //this.sendRequest(lat, lon);
         });
+
         $dfd.resolve();
         return $dfd.promise();
     }
 };
 
+
 $('#forecast').append('<p>Initializing Forecast engine...</p>');
 
-f = new Forecast();
+var f = new Forecast();
 f.init();
 
 navigator.geolocation.getCurrentPosition(function(position) {
@@ -265,10 +283,10 @@ Handlebars.registerHelper('getMoonPhase', function(v) {
         rightValue,
         rightStyle;
 
-    if (parseFloat(v) < .5) {
+    if (parseFloat(v) < 0.5) {
         return "border-" + borderSide + ":solid white " + leftValue;
     } else {
-        rightValue = (parseInt(moonWidth * v)) 
+        rightValue = (parseInt(moonWidth * v));
 
         // Fixes instances of rounding up to 26
         if (rightValue > 25) {
@@ -282,19 +300,19 @@ Handlebars.registerHelper('getMoonPhase', function(v) {
 
 Handlebars.registerHelper('floatToProbabilityPhrase', function(v) {
     "use strict";
-    if (v > .7) {
-        return "Count on it."
-    } else if (v > .6) {
+    if (v > 0.7) {
+        return "Count on it.";
+    } else if (v > 0.6) {
         return "Pret-tay, pret-tay, pret-tay...good.";
-    } else if (v > .5) {
+    } else if (v > 0.5) {
         return "Pretty good.";
-    } else if (v > .4) {
+    } else if (v > 0.4) {
         return "Plan for it.";
-    } else if (v > .3) {
+    } else if (v > 0.3) {
         return "Mmm. Maybe.";
-    } else if (v > .2) {
+    } else if (v > 0.2) {
         return "Could happen.";
-    } else if (v > .1) {
+    } else if (v > 0.1) {
         return "Not likely.";
     }
     return "Not happening.";
@@ -311,22 +329,27 @@ function initialize() {
     var mapOptions = {
         zoom: 8,
         center: latlng
-    }
+    };
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
 
 function codeAddress() {
     var address = document.getElementById('address').value;
+
     geocoder.geocode( { 'address': address}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
+        if (status === google.maps.GeocoderStatus.OK) {
+
             map.setCenter(results[0].geometry.location);
+
             var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location
-            });
+                    map: map,
+                    position: results[0].geometry.location
+                });
 
             console.log(results[0].geometry.location);
+
             f.init(results[0].geometry.location['k'], results[0].geometry.location['A'])
+
             .done(function() {
                 f.sendRequest(results[0].geometry.location['k'], results[0].geometry.location['A']);
             });
@@ -339,5 +362,15 @@ function codeAddress() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-//$(window).on('load', initialize);
-        
+var $picker = $('#datepicker').pickadate({
+        format: 'm/d/yyyy',
+    }),
+    picker = $picker.pickadate('picker');
+
+picker.on({
+    set: function(v) {
+        console.log(f.lat, f.lon, v.select/1000);
+        f.sendRequest(f.lat, f.lon, v.select/1000);
+    }
+});
+

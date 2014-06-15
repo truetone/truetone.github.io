@@ -1,5 +1,7 @@
 @import "normalize";
 @import 'bourbon/bourbon';
+@import "pickadate/default";
+@import "pickadate/default_date";
 
 $background: rgb(238,252,255);
 $white: #fff;
@@ -19,6 +21,7 @@ html, body {
     font-size: 1.2em;
     line-height: 1.4;
 }
+
 h1, h2, h3, h4, h5, h6 {
     clear: both;
     color: $red;
@@ -27,6 +30,11 @@ h1, h2, h3, h4, h5, h6 {
         color: $red;
     }
 }
+
+p {
+    margin: .8em 0;
+}
+
 a {
     color: $red;
     text-decoration: none;
@@ -40,26 +48,44 @@ a {
         text-decoration: underline;
     }
 }
+
 div, article, aside {
     @include box-sizing(border-box);
 }
+
 pre code {
     font-size: .8em;
 }
+
 dt {
     font-weight: bold;
 }
+
+button, input, select, textarea {
+    max-width: 100%;
+}
+
 .site {
     background: $white;
     margin: 0 auto;
     max-width: 1024px;
 }
+
 .content {
     @include clearfix;
 }
+
 footer {
     clear: both;
     width: 100%;
+}
+
+small {
+    font-size: .5em;
+}
+
+input {
+    max-width: 75%;
 }
 
 /* Margins and padding */
@@ -83,7 +109,8 @@ header, footer {
 }
 
 .condensed {
-    margin: .2em 0;
+    font-size: .8em;
+    margin: .3em 0;
 }
 .most-important {
     font-size: 1.15em;
@@ -197,5 +224,24 @@ header, footer {
             }
         }
     }
+}
+
+#current-temp {
+    font-size: 3em;
+    line-height: .7;
+    margin: 0;
+}
+
+#feels-like {
+ margin-top: 0;
+}
+
+#summary {
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+#chance {
+    margin-top: 0;
 }
 

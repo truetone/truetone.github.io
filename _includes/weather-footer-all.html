@@ -1,0 +1,179 @@
+          </div>
+          <footer>
+            <div class="contact">
+              <p>
+                Tony Thomas<br>
+                Father, Husband, Web Developer, Musician<br>
+                truetone at gmail.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/truetone">github.com/truetone</a><br />
+                <a href="https://twitter.com/truetone">twitter.com/truetone</a><br />
+              </p>
+            </div>
+          </footer>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="/js/minified/base.min.js"></script>
+        <!--
+        <script src="/js/lib/moment.min.js"></script>
+        <script src="/js/lib/picker.js"></script>
+        <script src="/js/lib/picker.date.js"></script>
+        -->
+        <script src="/js/minified/lib.min.js"></script>
+        <script src="/js/src/weather.js"></script>
+        <script id="current-conditions-template" type="text/x-handlebars-template">
+            {% raw %}
+            <article class="main">
+                <h3>Current Conditions</h3>
+                {{#if alerts}}
+                    {{#each alerts}}
+                    <p class="alert most-important"><a class="alert" href="{{this.uri}}">{{this.title}}</a></p>
+                    <details>
+                        <summary>More Info</summary>
+                        <p>{{this.description}}</p>
+                    </details>
+                    {{/each}}
+                {{/if}}
+
+                <p class="most-important">{{currently.summary}} &amp; {{toInt
+                currently.temperature}}&deg; F; Feels like {{toInt
+                currently.apparentTemperature}}&deg; F</p>
+
+                <p class="important">Chance of precipitation:
+                {{floatToProbabilityPhrase currently.precipProbability}}
+                ({{floatToPercent currently.precipProbability}} Chance)</p>
+
+                {{#if precipIntensity}}
+                    <p>{{currently.precipIntensity}}</p>
+                {{/if}}
+
+                <div class="column-container">
+                    <div class="column">
+                        <p class="condensed">Wind: {{toInt currently.windSpeed}} mph from the
+                        {{getCardinalDirection currently.windBearing}} 
+                        <span id="wind-bearing" style="transform:rotate({{currently.windBearing}}deg);-webkit-transform:rotate({{currently.windBearing}}deg);-moz-transform:rotate({{currently.windBearing}}deg);-ms-transform:rotate({{currently.windBearing}}deg)">&darr;</span></p>
+                    </div>
+                    <div class="column">
+                        <p class="condensed">{{floatToPercent currently.cloudCover}} Cloud Cover</p>
+                    </div>
+                </div>
+
+                <div class="column-container">
+                    <div class="column">
+                        <p class="condensed">Humidity: {{floatToPercent currently.humidity}}</p>
+                    </div>
+                    <div class="column">
+                        <p class="condensed">Dew point: {{toInt currently.dewPoint}}&deg; F</p>
+                    </div>
+                </div>
+
+                {{#if currently.nearestStormDistance}}
+                <p class="condensed">Nearest precipitation is {{currently.nearestStormDistance}}
+                miles to the {{getCardinalDirection
+                currently.nearestStormBearing}}. <small>(Take this information
+                with a grain of salt.)</small></p>
+                {{/if}}
+
+                <div class="column-container">
+                    <div class="column narrow">
+                        <p class="condensed">Visibility: {{currently.visibility}} Miles</p>
+                    </div>
+                    <div class="column narrow">
+                        <p class="condensed">Barometric pressure: {{currently.pressure}}</p>
+                    </div>
+                    <div class="column narrow">
+                        <p class="condensed">Ozone: {{currently.ozone}}</p>
+                    </div>
+                </div>
+
+                <h3>Daily Forecast</h3>
+                <p>{{daily.summary}}</p>
+                {{#each daily.data}}
+                    <h4>{{intToDay @index}}</h4>
+                    <dl>
+                        <dt>Forecast</dt>
+                        <dd>{{this.summary}}</dd>
+                        <dt>Chance of Precipitation</dt>
+                        <dd>{{floatToPercent this.precipProbability}} {{#if this.precipProbability}}(Heaviest @ {{timestampToHour precipIntensityMaxTime}}.){{/if}}</dd>
+                        <dt>High Temp</dt>
+                        <dd>{{toInt this.temperatureMax}}&deg; @ {{timestampToHour temperatureMaxTime}} (Will feel like {{toInt apparentTemperatureMax}}&deg;)</dd>
+                        <dt>Low Temp</dt>
+                        <dd>{{toInt this.temperatureMin}}&deg; @ {{timestampToHour temperatureMinTime}} (Will feel like {{toInt apparentTemperatureMin}}&deg;)</dd>
+                        <dt>Sunrise</dt>
+                        <dd>{{timestampToTime this.sunriseTime}}</dd>
+                        <dt>Sunset</dt>
+                        <dd>{{timestampToTime this.sunsetTime}}</dd>
+                        <dt>Length of Daylight</dt>
+                        <dd>{{amountOfSunlight this.sunriseTime this.sunsetTime}}</dd>
+                        <dt>Cloud Cover</dt>
+                        <dd>{{floatToPercent cloudCover}}</dd>
+                        <dt>Dew Point</dt>
+                        <dd>{{toInt dewPoint}}&deg;</dd>
+                        <dt>Humidity</dt>
+                        <dd>{{floatToPercent humidity}}</dd>
+                        <dt>Moon Phase</dt>
+                        <dd>
+                            <div id="moon-container">
+                                <div id="moon" class="orb"></div>
+                                <div id="shadow" class="orb" style="{{getMoonPhase moonPhase}}"></div>
+                            </div>
+                        </dd>
+                        <dt>Visibility</dt>
+                        <dd>{{visibility}} miles</dd>
+                        <dt>Wind Speed</dt>
+                        <dd>{{toInt windSpeed}} mph from the {{getCardinalDirection windBearing}}<span id="wind-bearing" style="transform:rotate({{windBearing}}deg);-webkit-transform:rotate({{windBearing}}deg);-moz-transform:rotate({{windBearing}}deg);-ms-transform:rotate({{windBearing}}deg)">&darr;</span></dd>
+                    </dl>
+
+                {{/each}}
+            </article>
+            <aside class="meta">
+
+                {{!--
+                <h3>Next Hour</h3>
+                {{#each minutely.data}}
+                    <h4>{{intToTime @index}}</h4>
+                    <dl>
+                        <dt>Precipitation Probability</dt>
+                        <dd>{{floatToPercent this.precipProbability}}</dd>
+                        <dt>Precipitation Intensity</dt>
+                        <dd>{{this.precipIntensity}}</dd>
+                        {{#if precipType}}
+                        <dt>Precipitation Type</dt>
+                        <dd>{{this.precipType}}</dd>
+                        {{/if}}
+                    </dl>
+                {{/each}}
+                --}}
+
+                <h3>Hourly Forecast</h3>
+                {{#each hourly.data}}
+                    <h4>{{intToHour @index}}</h4>
+                    <dl>
+                        <dt>Forecast</dt>
+                        <dd>{{this.summary}}</dd>
+                        <dt>Chance of Precipitation</dt>
+                        <dd>{{floatToPercent this.precipProbability}}</dd>
+                        <dt>Temperature</dt>
+                        <dd>{{toInt this.temperature}}&deg;F</dd>
+                        <dt>Cloud Cover</dt>
+                        <dd>{{floatToPercent cloudCover}}</dd>
+                        <dt>Dew Point</dt>
+                        <dd>{{toInt dewPoint}}&deg;</dd>
+                        <dt>Humidity</dt>
+                        <dd>{{floatToPercent humidity}}</dd>
+                        <dt>Visibility</dt>
+                        <dd>{{visibility}} miles</dd>
+                        <dt>Wind Speed</dt>
+                        <dd>{{toInt windSpeed}} mph from the {{getCardinalDirection windBearing}}<span id="wind-bearing" style="transform:rotate({{windBearing}}deg);-webkit-transform:rotate({{windBearing}}deg);-moz-transform:rotate({{windBearing}}deg);-ms-transform:rotate({{windBearing}}deg)">&darr;</span></dd>
+                    </dl>
+                {{/each}}
+
+            </aside>
+            {% endraw %}
+        </script>
+    </body>
+</html>
