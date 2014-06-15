@@ -5,13 +5,12 @@ date: {}
 layout: posts
 slug: resume
 title: Resume
-wordpress_id: 5
 published: true
 ---
 
 ## Resume
 
-[anthonygthomas.com](http://anthonygthomas.com); 612-827-2140
+[anthonygthomas.com](http://www.anthonygthomas.com); 612-827-2140
 
 ### Qualifications Summary
   * 13 years experience in web design and development
@@ -36,7 +35,7 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 * Student Unions & Activities web content updates
 
 #### Data Manager [Clinical Virology Programs](http://cvp.umn.edu) May 2005 to June 2010
-    
+	
 * Developed the Lab and Clinical Information System: a web-based system to track lab and clinical information for ongoing clinical trials using the [CakePHP framework](http://cakephp.org) - a [Model-View-Controller framework](http://en.wikipedia.org/wiki/Model-view-controller) similar to [Ruby-on-Rails](http://rubyonrails.org/).
 * Leveraged open-source solutions to save $5,000 in annual software license fees.
 * Converted flat text files to a normalized MySQL database to track over 40,000 aliquots
@@ -70,11 +69,18 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 * SQL
 
 #### Web Development Frameworks
-##### CSS Frameworks
+##### CSS Frameworks & Preprocessors
 * 960 Grid System
 * Blueprint CSS Framework
 * ez-css
-* Sass & Bourbon
+* [Sass](http://sass-lang.com/) & [Bourbon](http://bourbon.io/)
+
+##### Back End Frameworks
+* [Flask](http://flask.pocoo.org/)
+* [Jekyll](http://jekyllrb.com/)
+
+##### Front End Frameworks
+* [Grunt](http://gruntjs.com/)
 
 #### Design & Development Tools
 * Dreamweaver
