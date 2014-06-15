@@ -70,8 +70,15 @@ module.exports = function(grunt) {
                     '<%= jshint.gruntfile.src %>',
                     'css/sass/*.scss',
                 ],
-                tasks: ['jshint:gruntfile','jshint:weather', 'sass', 'concat']
+                //tasks: ['jshint:gruntfile','jshint:weather', 'sass', 'concat']
+                tasks: ['jshint:gruntfile','sass',]
             },
+            weather: {
+                files: [
+                    'js/src/weather.js',
+                ],
+                tasks: ['jshint:weather',]
+            }
         },
         concat: {
             dist: {

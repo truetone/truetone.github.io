@@ -3,12 +3,12 @@
 @import "pickadate/default";
 @import "pickadate/default_date";
 
-$background: rgb(238,252,255);
+$background: lighten(rgb(238,252,255), 1%);
 $white: #fff;
 $black: rgb(2,3,4);
 $grey: rgb(233,233,233);
 $dark-grey: darken(rgb(233,233,233), 30%);
-$red: rgb(240,5,90);
+$red: shade(rgb(240,5,90), 5%);
 $red-active: rgb(240,0,0);
 $green: rgb(96,144,0);
 
