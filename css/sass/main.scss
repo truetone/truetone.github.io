@@ -1,5 +1,6 @@
 @import "normalize";
 @import 'bourbon/bourbon';
+@import 'neat/neat';
 @import "pickadate/default";
 @import "pickadate/default_date";
 
@@ -15,7 +16,8 @@ $green: rgb(96,144,0);
 $media-query-min-width: 780px;
 
 /* Defaults */
-html, body {
+html,
+body {
     background: $background;
     color: $black;
     font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
@@ -66,10 +68,15 @@ button, input, select, textarea {
     max-width: 100%;
 }
 
+details {
+    margin: 0 0 1em 0;
+}
+
 .site {
+    @include outer-container;
     background: $white;
     margin: 0 auto;
-    max-width: 1024px;
+    //max-width: 1024px;
 }
 
 .content {
@@ -197,13 +204,15 @@ header, footer {
 
 @media screen and (min-width: $media-query-min-width) {
     .main {
-        float: left;
-        width: 66.66666%;
+        @include span-columns(8);
+        //float: left;
+        //width: 66.66666%;
     }
 
     .meta {
-        float: left;
-        width: 33.33332%;
+        @include span-columns(4);
+        //float: left;
+        //width: 33.33332%;
     }
 
     .column-container {
