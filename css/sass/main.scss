@@ -1,6 +1,7 @@
-@import "normalize";
+//@import "normalize";
 @import 'bourbon/bourbon';
 @import 'neat/neat';
+@import 'base/base';
 @import "pickadate/default";
 @import "pickadate/default_date";
 
@@ -8,7 +9,7 @@ $background: lighten(rgb(238,252,255), 1%);
 $white: #fff;
 $black: rgb(2,3,4);
 $grey: rgb(233,233,233);
-$dark-grey: darken(rgb(233,233,233), 30%);
+$dark-grey: darken(rgb(233,233,233), 40%);
 $red: shade(rgb(240,5,90), 5%);
 $red-active: rgb(240,0,0);
 $green: rgb(96,144,0);
@@ -50,6 +51,10 @@ a {
     &:hover {
         text-decoration: underline;
     }
+}
+
+ul.simple {
+    list-style: none;
 }
 
 div, article, aside {
@@ -117,12 +122,14 @@ header, footer {
 }
 
 .condensed {
-    font-size: .8em;
-    margin: .3em 0;
+   // line-height: 1em;
+    //margin: .3em 0;
 }
+
 .most-important {
     font-size: 1.15em;
 }
+
 .important {
     font-size: 1.1em;
 }
@@ -205,14 +212,10 @@ header, footer {
 @media screen and (min-width: $media-query-min-width) {
     .main {
         @include span-columns(8);
-        //float: left;
-        //width: 66.66666%;
     }
 
     .meta {
         @include span-columns(4);
-        //float: left;
-        //width: 33.33332%;
     }
 
     .column-container {
@@ -220,25 +223,56 @@ header, footer {
     }
 
     .column {
-        float: left;
-        margin-right: 10%;
-        width: 45%;
-        &:last-child {
-            margin-right: 0;
+        @include span-columns(6);
+
+        &.plus {
+            @include span-columns(7);
         }
-        &.narrow {
-            width: 30%;
-            margin-right: 5%;
-            &:last-child {
-                margin-right: 0;
+
+        &.wide {
+            @include span-columns(8);
+
+            &.extended {
+                @include span-columns(9);
+
+                &.more {
+                    @include span-columns(10);
+                }
+
+                &.reach {
+                    @include span-columns(11);
+                }
             }
+        }
+
+        &.narrow {
+            @include span-columns(4);
+
+            &.plus {
+                @include span-columns(5);
+            }
+        }
+        
+        &.tiny {
+            @include span-columns(2);
+
+            &.plus {
+                @include span-columns(3);
+            }
+        }
+
+        &.miniscule {
+            @include span-columns(1);
         }
     }
 }
 
+.posts li {
+    margin-bottom: .5em;
+}
+
 #current-temp {
     font-size: 3em;
-    line-height: .7;
     margin: 0;
 }
 
@@ -253,6 +287,10 @@ header, footer {
 
 #chance {
     margin-top: 0;
+}
+
+#current-details {
+    margin-top: 25px;
 }
 
 .downplay {

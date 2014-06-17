@@ -33,41 +33,54 @@
                     </details>
                     {{/each}}
                 {{/if}}
-                <p id="current-temp">
-                    {{toInt currently.temperature}}&deg; F
-                </p>
-                <p id="feels-like"><small class="downplay">Feels like {{toInt currently.apparentTemperature}}&deg; F</small></p>
+                <div class="column-container">
+                    <div class="column narrow plus">
+                        <p id="current-temp">
+                            {{toInt currently.temperature}}&deg; F
+                        </p>
+                        <ul class="simple">
+                            <li id="feels-like" class="condensed downplay">Feels like {{toInt currently.apparentTemperature}}&deg; F</li>
+                            <li id="chance" class="condensed downplay">Chance of precipitation:
+                                {{floatToProbabilityPhrase currently.precipProbability}}<br>
+                                <small>({{floatToPercent currently.precipProbability}} Chance)</small>
+                            </li>
+                        </ul>
+                        <p id="summary" class="most-important">{{currently.summary}}</p>
+                    </div>
+                    <div class="column plus" id="current-details">
+                        <ul class="simple">
+                            {{#if precipIntensity}}
+                                <li>{{currently.precipIntensity}}</li>
+                            {{/if}}
 
-                <p id="summary" class="most-important">{{currently.summary}}</p>
+                            <li>Wind: {{toInt currently.windSpeed}} mph from the
+                                {{getCardinalDirection currently.windBearing}} 
+                                <span id="wind-bearing" style="transform:rotate({{currently.windBearing}}deg);-webkit-transform:rotate({{currently.windBearing}}deg);-moz-transform:rotate({{currently.windBearing}}deg);-ms-transform:rotate({{currently.windBearing}}deg)">&darr;</span>
+                            </li>
+                            <li class="condensed">{{floatToPercent currently.cloudCover}} Cloud Cover</li>
 
-                <p id="chance"><small class="downplay">Chance of precipitation:
-                {{floatToProbabilityPhrase currently.precipProbability}}
-                ({{floatToPercent currently.precipProbability}} Chance)</small></p>
+                            <li class="condensed">Humidity: {{floatToPercent currently.humidity}}</li>
+                            <li class="condensed">Dew point: {{toInt currently.dewPoint}}&deg; F</li>
 
-                {{#if precipIntensity}}
-                    <p>{{currently.precipIntensity}}</p>
-                {{/if}}
+                            {{#if currently.nearestStormDistance}}
+                            <li class="condensed">Nearest precipitation is
+                                {{currently.nearestStormDistance}} miles to the
+                                {{getCardinalDirection currently.nearestStormBearing}}.*
+                            </li>
+                            {{/if}}
 
-                <p>Wind: {{toInt currently.windSpeed}} mph from the
-                {{getCardinalDirection currently.windBearing}} 
-                <span id="wind-bearing" style="transform:rotate({{currently.windBearing}}deg);-webkit-transform:rotate({{currently.windBearing}}deg);-moz-transform:rotate({{currently.windBearing}}deg);-ms-transform:rotate({{currently.windBearing}}deg)">&darr;</span></p>
-                <p class="condensed">{{floatToPercent currently.cloudCover}} Cloud Cover</p>
+                            <li class="condensed">Visibility: {{currently.visibility}} Miles</li>
+                            <li class="condensed">Barometric pressure: {{currently.pressure}}</li>
+                            <li class="condensed">Ozone: {{currently.ozone}}</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <p class="condensed">Humidity: {{floatToPercent currently.humidity}}</p>
-                <p class="condensed">Dew point: {{toInt currently.dewPoint}}&deg; F</p>
-
-                {{#if currently.nearestStormDistance}}
-                <p class="condensed">Nearest precipitation is
-                {{currently.nearestStormDistance}} miles to the
-                {{getCardinalDirection currently.nearestStormBearing}}.*</p>
-                {{/if}}
-
-                <p class="condensed">Visibility: {{currently.visibility}} Miles</p>
-                <p class="condensed">Barometric pressure: {{currently.pressure}}</p>
-                <p class="condensed">Ozone: {{currently.ozone}}</p>
                 
-                <p><small class="downplay">*Take this information with a grain of
-                salt.</small></p>
+                {{#if currently.nearestStormDistance}}
+                    <p><small class="downplay">*Take this information with a
+                    grain of salt.</small></p>
+                {{/if}}
             </aside>
             {% endraw %}
         </script>
