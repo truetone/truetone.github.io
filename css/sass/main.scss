@@ -53,6 +53,15 @@ a {
     }
 }
 
+ul {
+    list-style: disc;
+}
+
+li {
+    margin-bottom: .3em;
+    margin-left: 2em;
+}
+
 ul.simple {
     list-style: none;
 }
