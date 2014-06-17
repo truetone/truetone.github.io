@@ -54,12 +54,11 @@ a {
 }
 
 ul {
-    list-style: disc;
+    @extend %default-ul;
 }
 
-li {
-    margin-bottom: .3em;
-    margin-left: 2em;
+ol {
+    @extend %default-ol;
 }
 
 ul.simple {
