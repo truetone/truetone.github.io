@@ -225,6 +225,9 @@ header, footer {
     .column {
         @include span-columns(6);
 
+        &.all {
+            @include span-columns(12);
+        }
         &.plus {
             @include span-columns(7);
         }
