@@ -23,7 +23,7 @@ published: true
 
 #### University of Minnesota, Minneapolis, MN
 
-Senior Web Developer [Student Unions & Activities](http://sua.umn.edu)
+Web Developer [Student Unions & Activities](http://sua.umn.edu)
 	June 2010 to Present
 
 * Supervise one full time developer and two part time student developers
