@@ -23,16 +23,22 @@ published: true
 
 #### University of Minnesota, Minneapolis, MN
 
-Web Developer [Student Unions & Activities](http://sua.umn.edu)
+Senior Web Developer [Student Unions & Activities](http://sua.umn.edu)
 	June 2010 to Present
 
+* Supervise one full time developer and two part time student developers
+* Meet w/ clients to determine project needs
+* Develop project plans
+* Manage Linux servers for production, test and API environments
+* Deploy code and server configurations using [Ansible](http://www.ansible.com)
+* Develop and support custom Python packages for the Django framework
 * Front end development for Student Unions touch screen directories in [Coffman Memorial Union](http://coffman.umn.edu) and [St. Paul Student Center](http://spsc.umn.edu) using HTML5, XHTML, CSS and JavaScript
+* Code Python applications using Flask & Django
 * Developed and tested responsive designs
 * Coded updated website design for Student Unions & Activities website
-* Coded Python applications using Flask & Django
 * Coded mobile websites for University of Minnesota [Spring Jam](http://springjam.umn.edu) and [Homecoming](http://homecoming.umn.edu).
 * Built weather information widget using HTML, CSS and JavaScript
-* Student Unions & Activities web content updates
+* Student Unions & Activities website content updates
 
 #### Data Manager [Clinical Virology Programs](http://cvp.umn.edu) May 2005 to June 2010
 	
