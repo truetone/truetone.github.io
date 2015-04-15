@@ -13,7 +13,7 @@ published: true
 [anthonygthomas.com](http://www.anthonygthomas.com); 612-827-2140
 
 ### Qualifications Summary
-  * 13 years experience in web design and development
+  * 15 years experience in web design and development
   * 10 years experience in database administration
   * Over 6 years project management experience
   * Over 3 years multimedia publishing
@@ -29,16 +29,16 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 * Supervise one full time developer and two part time student developers
 * Meet w/ clients to determine project needs
 * Develop project plans
+* Conduct content audits and reviews using content strategy methodologies
 * Manage Linux servers for production, test and API environments
-* Deploy code and server configurations using [Ansible](http://www.ansible.com)
+* Deploy code and server configurations using Ansible
 * Develop and support custom Python packages for the Django framework
-* Front end development for Student Unions touch screen directories in [Coffman Memorial Union](http://coffman.umn.edu) and [St. Paul Student Center](http://spsc.umn.edu) using HTML5, XHTML, CSS and JavaScript
+* Front end development for Student Unions touch screen directories in Coffman Memorial Union and St. Paul Student Center using HTML5, SASS and JavaScript
+* Develop and test responsive designs
+* Update website designs for Student Unions & Activities
 * Code Python applications using Flask & Django
-* Developed and tested responsive designs
-* Coded updated website design for Student Unions & Activities website
-* Coded mobile websites for University of Minnesota [Spring Jam](http://springjam.umn.edu) and [Homecoming](http://homecoming.umn.edu).
-* Built weather information widget using HTML, CSS and JavaScript
-* Student Unions & Activities website content updates
+* Student Unions & Activities web content updates
+* Support legacy PHP codebase
 
 #### Data Manager [Clinical Virology Programs](http://cvp.umn.edu) May 2005 to June 2010
 	
@@ -79,16 +79,19 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 * 960 Grid System
 * Blueprint CSS Framework
 * ez-css
-* [Sass](http://sass-lang.com/) & [Bourbon](http://bourbon.io/)
+* [Sass](http://sass-lang.com/), [Bourbon](http://bourbon.io/) & [Neat](http://neat.bourbon.io/)
 
 ##### Back End Frameworks
+* [Django](https://www.djangoproject.com/)
 * [Flask](http://flask.pocoo.org/)
 * [Jekyll](http://jekyllrb.com/)
 
 ##### Front End Frameworks
+* [Angular](https://angularjs.org/)
 * [Grunt](http://gruntjs.com/)
 
 #### Design & Development Tools
+* Ansible
 * Dreamweaver
 * Fireworks
 * Git
@@ -99,6 +102,7 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 * Subversion
 * TextMate
 * Transmit
+* Vagrant
 * Vim
 
 #### Databases
