@@ -13,32 +13,44 @@ published: true
 [anthonygthomas.com](http://www.anthonygthomas.com); 612-827-2140
 
 ### Qualifications Summary
-  * 15 years experience in web design and development
+  * 16 years experience in web design and development
   * 10 years experience in database administration
   * Over 6 years project management experience
+  * Over 5 years Python development experience
   * Over 3 years multimedia publishing
   * Over 3 years research data management experience
 
 ### Professional Experience
 
+#### Leadpages
+
+Software Engineer [Leadpages](http://leadpages.net)
+    July 2015 to Present
+
+* Write new API services to support the Leadpages and Center products using Python and Google App Engine
+* Develop new features for the Leadpages product
+* Fix bugs in the Leadpages product
+* Write mapreduce functions to migrate data
+* Write BigQuery queries to retrieve data for reports
+
 #### University of Minnesota, Minneapolis, MN
 
 Web Developer [Student Unions & Activities](http://sua.umn.edu)
-	June 2010 to Present
+	June 2010 to July 2015
 
-* Supervise one full time developer and two part time student developers
-* Meet w/ clients to determine project needs
-* Develop project plans
-* Conduct content audits and reviews using content strategy methodologies
-* Manage Linux servers for production, test and API environments
-* Deploy code and server configurations using Ansible
-* Develop and support custom Python packages for the Django framework
+* Supervised one full time developer and two part time student developers
+* Met w/ clients to determine project needs
+* Developed project plans
+* Conducted content audits and reviews using content strategy methodologies
+* Managed Linux servers for production, test and API environments
+* Deployed code and server configurations using Ansible
+* Developed and support custom Python packages for the Django framework
 * Front end development for Student Unions touch screen directories in Coffman Memorial Union and St. Paul Student Center using HTML5, SASS and JavaScript
-* Develop and test responsive designs
-* Update website designs for Student Unions & Activities
-* Code Python applications using Flask & Django
+* Developed and test responsive designs
+* Updated website designs for Student Unions & Activities
+* Coded Python applications using Flask & Django
 * Student Unions & Activities web content updates
-* Support legacy PHP codebase
+* Supported legacy PHP codebase
 
 #### Data Manager [Clinical Virology Programs](http://cvp.umn.edu) May 2005 to June 2010
 	
