@@ -27,7 +27,7 @@ published: true
 Software Engineer [Leadpages](http://leadpages.net)
     July 2015 to Present
 
-* Write new API services to support the Leadpages and Center products using Python and Google App Engine
+* Write new API services to support the Leadpages and Center products using Python, Google App Engine and Google Compute Engine
 * Develop new features for the Leadpages product
 * Fix bugs in the Leadpages product
 * Write mapreduce functions to migrate data
@@ -39,12 +39,13 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 	June 2010 to July 2015
 
 * Supervised one full time developer and two part time student developers
-* Met w/ clients to determine project needs
+* Met with clients to determine project needs
 * Developed project plans
 * Conducted content audits and reviews using content strategy methodologies
 * Managed Linux servers for production, test and API environments
 * Deployed code and server configurations using Ansible
 * Developed and support custom Python packages for the Django framework
+* MySQL database administration
 * Front end development for Student Unions touch screen directories in Coffman Memorial Union and St. Paul Student Center using HTML5, SASS and JavaScript
 * Developed and test responsive designs
 * Updated website designs for Student Unions & Activities
@@ -67,8 +68,8 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 * Helped determine annual budgets for program purchase orders
 * Liaison between Clinical Virology Programs staff and Frontier Science Data Center for AIDS Clinical Trials Group (ACTG) research studies
 * Responsible quality of data in University of Minnesota ACTG site and sub-sites at Hennepin County Medical Center, University of Iowa and University of Nebraska
-* Generate data reports for Study Coordinator and Principal Investigator
-* Responsible for making purchases in University of Minnesota Enterprise Financial System.
+* Generated data reports for Study Coordinator and Principal Investigator
+* Responsible for making purchases in University of Minnesota Enterprise Financial System
 
 #### Independent Consultant, Minneapolis, MN Freelance Web Developer, May 2005 to June 2010
 
@@ -97,10 +98,13 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 * [Django](https://www.djangoproject.com/)
 * [Flask](http://flask.pocoo.org/)
 * [Jekyll](http://jekyllrb.com/)
+* [WebApp2](https://webapp2.readthedocs.io/en/latest/)
+* [CakePHP](http://cakephp.org/)
 
 ##### Front End Frameworks
 * [Angular](https://angularjs.org/)
 * [Grunt](http://gruntjs.com/)
+* [Gulp](http://gulpjs.com/)
 
 #### Design & Development Tools
 * Ansible
@@ -121,6 +125,7 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 * Access
 * Filemaker Pro
 * MySQL
+* NDB
 
 ### Presentations
 
