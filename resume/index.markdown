@@ -22,21 +22,31 @@ published: true
 
 ### Professional Experience
 
+#### University of Minnesota, Minneapolis, MN
+
+Web Developer [College of Education and Human Development](http://www.cehd.umn.edu)
+    August 2016 to Present
+
+* Support several static and Wordpress sites running on an IIS environment
+* Evaluate site accessibility and performance
+* Support Web Strategy team by building new web applications and interactive website components
+* Research and build site development and deployment tools to help standardize workflow and speed up website development
+
 #### Leadpages
 
 Software Engineer [Leadpages](http://leadpages.net)
-    July 2015 to Present
+    July 2015 to August 2016
 
-* Write new API services to support the Leadpages and Center products using Python, Google App Engine and Google Compute Engine
-* Develop new features for the Leadpages product
-* Fix bugs in the Leadpages product
-* Write mapreduce functions to migrate data
-* Write BigQuery queries to retrieve data for reports
+* Wrote new API services to support the Leadpages and Center products using Python, Google App Engine and Google Compute Engine
+* Developed new features for the Leadpages product
+* Fixed bugs in the Leadpages product
+* Wrote mapreduce functions to migrate data
+* Wrote BigQuery queries to retrieve data for reports
 
 #### University of Minnesota, Minneapolis, MN
 
 Web Developer [Student Unions & Activities](http://sua.umn.edu)
-	June 2010 to July 2015
+    June 2010 to July 2015
 
 * Supervised one full time developer and two part time student developers
 * Met with clients to determine project needs
@@ -54,15 +64,15 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 * Supported legacy PHP codebase
 
 #### Data Manager [Clinical Virology Programs](http://cvp.umn.edu) May 2005 to June 2010
-	
+
 * Developed the Lab and Clinical Information System: a web-based system to track lab and clinical information for ongoing clinical trials using the [CakePHP framework](http://cakephp.org) - a [Model-View-Controller framework](http://en.wikipedia.org/wiki/Model-view-controller) similar to [Ruby-on-Rails](http://rubyonrails.org/).
 * Leveraged open-source solutions to save $5,000 in annual software license fees.
 * Converted flat text files to a normalized MySQL database to track over 40,000 aliquots
 * Created a portal for study participants to access their own symptom records and update them on a weekly basis.
 * Coded User Interface using HTML, JavaScript, CSS and PHP to manage clinic and lab information.
-	* Migrated system to a Dedicated Virtual Server
-	* Redesigned the Clinical Virology Programs website.
-	* Coded Clinical Virology Programs website for [Wordpress](http://wordpresss.org) using a combination of HTML, CSS & PHP
+    * Migrated system to a Dedicated Virtual Server
+    * Redesigned the Clinical Virology Programs website.
+    * Coded Clinical Virology Programs website for [Wordpress](http://wordpresss.org) using a combination of HTML, CSS & PHP
 * Wrote and edited articles for the Clinical Virology Programs website
 * Developed databases in [MySQL](http://mysql.com) and [FileMaker Pro](http://filemaker.com) to keep track of research study information
 * Helped determine annual budgets for program purchase orders
