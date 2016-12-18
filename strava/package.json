@@ -1,0 +1,16 @@
+{
+  "name": "strava",
+  "version": "1.0.0",
+  "description": "Strava stats rendering",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Tony Thomas",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1"
+  }
+}

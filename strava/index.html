@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Strava Stats</title>
+  <meta name="description" content="My Strava Stats">
+  <meta name="author" content="The HTML5 Herald">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>My Strava Stats</h1>
+        </div>
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        var model = new Model();
+        var app = new App(model);
+        var request = app.get({
+                url: "data/index.json",
+                dataType: "json"
+            });
+
+        request.done(function() {
+            var index = app.model.getData();
+            var request_params = {
+                url: "data/" + index[0],
+                dataType: "xml"
+            }
+
+            var request = app.get(request_params);
+
+            request.done(function() {
+                console.log(app.model.getData());
+            });
+        });
+    </script>
+</body>
+</html>
