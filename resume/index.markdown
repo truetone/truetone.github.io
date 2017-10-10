@@ -14,11 +14,9 @@ published: true
 
 ### Qualifications Summary
   * 16 years experience in web design and development
+  * 11 years PHP development experience
   * 10 years experience in database administration
-  * Over 6 years project management experience
   * Over 5 years Python development experience
-  * Over 3 years multimedia publishing
-  * Over 3 years research data management experience
 
 ### Professional Experience
 
@@ -27,10 +25,11 @@ published: true
 Web Developer [College of Education and Human Development](http://www.cehd.umn.edu)
     August 2016 to Present
 
-* Support several static and Wordpress sites running on an IIS environment
-* Evaluate site accessibility and performance
-* Support Web Strategy team by building new web applications and interactive website components
-* Research and build site development and deployment tools to help standardize workflow and speed up website development
+* Work with Web Strategy team to build reusable front end patterns and code for public-facing websites
+* Build back end applications to support needs of Web Strategy team
+* Build Wordpress themes using same CSS and JavaScript patterns other sites use
+* Train staff
+* Develop plans for switch from IIS server infrastructure to RHEL servers
 
 #### Leadpages
 
