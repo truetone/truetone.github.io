@@ -104,24 +104,23 @@ Web Developer [Student Unions & Activities](http://sua.umn.edu)
 * [Sass](http://sass-lang.com/), [Bourbon](http://bourbon.io/) & [Neat](http://neat.bourbon.io/)
 
 ##### Back End Frameworks
+* [CakePHP](http://cakephp.org/)
 * [Django](https://www.djangoproject.com/)
 * [Flask](http://flask.pocoo.org/)
 * [Jekyll](http://jekyllrb.com/)
+* [Slim](https://www.slimframework.com/)
 * [WebApp2](https://webapp2.readthedocs.io/en/latest/)
-* [CakePHP](http://cakephp.org/)
 
 ##### Front End Frameworks
 * [Angular](https://angularjs.org/)
 * [Grunt](http://gruntjs.com/)
 * [Gulp](http://gulpjs.com/)
+* [webpack](https://webpack.js.org/)
 
 #### Design & Development Tools
 * Ansible
-* Dreamweaver
-* Fireworks
 * Git
 * Illustrator
-* Komodo Edit
 * Mercurial
 * Photoshop
 * Subversion
